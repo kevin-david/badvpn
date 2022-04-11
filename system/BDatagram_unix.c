@@ -31,6 +31,8 @@
 #define _GNU_SOURCE
 #endif
 
+#define __APPLE_USE_RFC_2292
+
 #include <stddef.h>
 #include <string.h>
 #include <unistd.h>
