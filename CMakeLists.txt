@@ -168,8 +168,9 @@ else ()
     set(BADVPN_THREADWORK_USE_PTHREAD 1)
     add_definitions(-DBADVPN_THREADWORK_USE_PTHREAD)
     add_definitions(-DBADVPN_THREAD_SAFE=1)
+    add_definitions(-DBADVPN_USE_KEVENT)
 
-    link_libraries(rt pthread)
+    link_libraries(pthread)
 
     if (EMSCRIPTEN)
         add_definitions(-DBADVPN_EMSCRIPTEN)
@@ -215,7 +216,6 @@ else ()
         if (NOT HAVE_KQUEUE)
             message(FATAL_ERROR "kqueue is required")
         endif ()
-        add_definitions(-DBADVPN_USE_KEVENT)
     endif ()
 
     if (NOT DEFINED BADVPN_WITHOUT_CRYPTODEV)

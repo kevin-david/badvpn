@@ -32,6 +32,7 @@
 
 #define BDATAGRAM_SEND_LIMIT 2
 #define BDATAGRAM_RECV_LIMIT 2
+#define __APPLE_USE_RFC_2292
 
 struct BDatagram_s {
     BReactor *reactor;
